@@ -35,7 +35,7 @@ namespace RPC
             }
             finally
             {
-                btnAtualizar.Enabled = true;
+                btnAlterarStatus.Enabled = true;
                 SalvarInformacoes();
             }
         }
@@ -99,9 +99,9 @@ namespace RPC
         #region ..:: Eventos ::..
 
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
-        private void btnInicializar_Click(object sender, EventArgs e) => Inicializar();
-        private void btnAtualizar_Click(object sender, EventArgs e) => DefinirPresenca();
-
+        private void btnInicializar_Click_1(object sender, EventArgs e) => Inicializar();
+        private void btnAtualizar_Click_1(object sender, EventArgs e) => DefinirPresenca();
+        
         #endregion ..:: Eventos ::..
     }
 }
