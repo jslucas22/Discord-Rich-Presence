@@ -13,6 +13,7 @@ namespace RPC
         private int _movimento;
         private int _movimentoX;
         private int _movimentoY;
+        private bool _inicializou;
         private Helper _helper;
 
         #endregion ..:: Variáveis ::..
@@ -46,25 +47,24 @@ namespace RPC
 
         private void Inicializar()
         {
-            _helper = new Helper(txtIdAplicacao.Text);
-        }
+            if (!_inicializou)
+            {
+                _inicializou = true;
+                _helper = new Helper(txtIdAplicacao.Text);
 
-        private void AlterarEstadoComponentes()
-        {
-            btnInicializar.Enabled = false;
-            btnDefinirValores.Enabled = true;
+                _helper.Inicializar();
+            }
         }
 
         private void InicializarAplicacao()
         {
             try
             {
-                Inicializar();
-
                 if (!string.IsNullOrEmpty(txtIdAplicacao.Text))
                 {
-                    _helper.Inicializar();
-                    AlterarEstadoComponentes();
+                    Inicializar();    
+                    
+                    _helper.DefinirPresenca(txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
                 }
                 else
                 {
@@ -81,7 +81,7 @@ namespace RPC
         {
             try
             {
-                _helper.DefinirPresenca(txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
+                InicializarAplicacao();                
             }
             catch (Exception ex)
             {
@@ -106,7 +106,6 @@ namespace RPC
         //# ------------------------------> Com Lambda <------------------------------
 
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
-        private void btnInicializar_Click_1(object sender, EventArgs e) => InicializarAplicacao();
         private void btnAtualizar_Click_1(object sender, EventArgs e) => DefinirPresenca();
         private void picFechar_Click(object sender, EventArgs e) => SalvarXFechar(txtIdAplicacao.Text, txtEstado.Text, txtDetalhes.Text, txtImagemRaw.Text);
         private void picMinimizar_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;

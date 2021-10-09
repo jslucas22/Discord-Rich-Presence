@@ -46,7 +46,6 @@ namespace RPC
             this.pnlIdAplicacao = new RPC.Controles.CustomPanel();
             this.txtIdAplicacao = new System.Windows.Forms.TextBox();
             this.btnDefinirValores = new RPC.Controles.CustomButton();
-            this.btnInicializar = new RPC.Controles.CustomButton();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFechar)).BeginInit();
@@ -252,7 +251,6 @@ namespace RPC
             this.btnDefinirValores.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btnDefinirValores.CorTextoBotao = System.Drawing.Color.White;
             this.btnDefinirValores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDefinirValores.Enabled = false;
             this.btnDefinirValores.FlatAppearance.BorderSize = 0;
             this.btnDefinirValores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDefinirValores.ForeColor = System.Drawing.Color.White;
@@ -262,29 +260,9 @@ namespace RPC
             this.btnDefinirValores.TabIndex = 10;
             this.btnDefinirValores.TamanhoBorda = 0;
             this.btnDefinirValores.TamanhoRaio = 4;
-            this.btnDefinirValores.Text = "Definir Valores";
+            this.btnDefinirValores.Text = "Definir Status de Atividade";
             this.btnDefinirValores.UseVisualStyleBackColor = false;
             this.btnDefinirValores.Click += new System.EventHandler(this.btnAtualizar_Click_1);
-            // 
-            // btnInicializar
-            // 
-            this.btnInicializar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btnInicializar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnInicializar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btnInicializar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnInicializar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInicializar.FlatAppearance.BorderSize = 0;
-            this.btnInicializar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicializar.ForeColor = System.Drawing.Color.White;
-            this.btnInicializar.Location = new System.Drawing.Point(267, 200);
-            this.btnInicializar.Name = "btnInicializar";
-            this.btnInicializar.Size = new System.Drawing.Size(194, 35);
-            this.btnInicializar.TabIndex = 9;
-            this.btnInicializar.TamanhoBorda = 0;
-            this.btnInicializar.TamanhoRaio = 4;
-            this.btnInicializar.Text = "Inicializar";
-            this.btnInicializar.UseVisualStyleBackColor = false;
-            this.btnInicializar.Click += new System.EventHandler(this.btnInicializar_Click_1);
             // 
             // zMain
             // 
@@ -298,7 +276,6 @@ namespace RPC
             this.Controls.Add(this.pnlIdAplicacao);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.btnDefinirValores);
-            this.Controls.Add(this.btnInicializar);
             this.Controls.Add(this.lblImagemGrande);
             this.Controls.Add(this.lblIDApp);
             this.Controls.Add(this.lblDetalhes);
@@ -346,7 +323,6 @@ namespace RPC
         private Controles.CustomPanel pnlImagemRaw;
         private System.Windows.Forms.PictureBox picFechar;
         private System.Windows.Forms.PictureBox picMinimizar;
-        public Controles.CustomButton btnInicializar;
         public Controles.CustomButton btnDefinirValores;
     }
 }

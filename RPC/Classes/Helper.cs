@@ -28,10 +28,12 @@ namespace RPC.Classes
         {
             try
             {
-                _discordRpcClient = new DiscordRpcClient(_idAplicaco);
-                _discordRpcClient.Logger = new ConsoleLogger()
+                _discordRpcClient = new DiscordRpcClient(_idAplicaco)
                 {
-                    Level = LogLevel.Warning
+                    Logger = new ConsoleLogger()
+                    {
+                        Level = LogLevel.Warning
+                    }
                 };
                 _discordRpcClient.Initialize();
             }
