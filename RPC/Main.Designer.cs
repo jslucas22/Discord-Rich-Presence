@@ -62,7 +62,7 @@ namespace RPC
             this.lblEstado.Location = new System.Drawing.Point(12, 164);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(42, 13);
-            this.lblEstado.TabIndex = 4;
+            this.lblEstado.TabIndex = 5;
             this.lblEstado.Text = "Estado";
             // 
             // lblDetalhes
@@ -71,7 +71,7 @@ namespace RPC
             this.lblDetalhes.Location = new System.Drawing.Point(12, 104);
             this.lblDetalhes.Name = "lblDetalhes";
             this.lblDetalhes.Size = new System.Drawing.Size(51, 13);
-            this.lblDetalhes.TabIndex = 2;
+            this.lblDetalhes.TabIndex = 3;
             this.lblDetalhes.Text = "Detalhes";
             // 
             // lblIDApp
@@ -80,7 +80,7 @@ namespace RPC
             this.lblIDApp.Location = new System.Drawing.Point(12, 39);
             this.lblIDApp.Name = "lblIDApp";
             this.lblIDApp.Size = new System.Drawing.Size(70, 13);
-            this.lblIDApp.TabIndex = 0;
+            this.lblIDApp.TabIndex = 1;
             this.lblIDApp.Text = "ID Aplicação";
             // 
             // lblImagemGrande
@@ -89,7 +89,7 @@ namespace RPC
             this.lblImagemGrande.Location = new System.Drawing.Point(10, 225);
             this.lblImagemGrande.Name = "lblImagemGrande";
             this.lblImagemGrande.Size = new System.Drawing.Size(73, 13);
-            this.lblImagemGrande.TabIndex = 6;
+            this.lblImagemGrande.TabIndex = 7;
             this.lblImagemGrande.Text = "Imagem Raw";
             // 
             // pnlHeader
@@ -102,7 +102,7 @@ namespace RPC
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(473, 25);
-            this.pnlHeader.TabIndex = 14;
+            this.pnlHeader.TabIndex = 0;
             this.pnlHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseDown);
             this.pnlHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseMove);
             this.pnlHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseUp);
@@ -136,7 +136,7 @@ namespace RPC
             this.lblNomePrograma.Location = new System.Drawing.Point(3, 6);
             this.lblNomePrograma.Name = "lblNomePrograma";
             this.lblNomePrograma.Size = new System.Drawing.Size(151, 13);
-            this.lblNomePrograma.TabIndex = 1;
+            this.lblNomePrograma.TabIndex = 0;
             this.lblNomePrograma.Text = "zRPC | Discord Rich Presence";
             // 
             // pnlImagemRaw
@@ -150,7 +150,7 @@ namespace RPC
             this.pnlImagemRaw.Location = new System.Drawing.Point(15, 251);
             this.pnlImagemRaw.Name = "pnlImagemRaw";
             this.pnlImagemRaw.Size = new System.Drawing.Size(199, 23);
-            this.pnlImagemRaw.TabIndex = 18;
+            this.pnlImagemRaw.TabIndex = 8;
             this.pnlImagemRaw.TamanhoBorda = 0;
             this.pnlImagemRaw.TamanhoRaio = 4;
             // 
@@ -163,7 +163,7 @@ namespace RPC
             this.txtImagemRaw.Location = new System.Drawing.Point(3, 2);
             this.txtImagemRaw.Name = "txtImagemRaw";
             this.txtImagemRaw.Size = new System.Drawing.Size(192, 16);
-            this.txtImagemRaw.TabIndex = 7;
+            this.txtImagemRaw.TabIndex = 0;
             // 
             // pnlEstado
             // 
@@ -176,7 +176,7 @@ namespace RPC
             this.pnlEstado.Location = new System.Drawing.Point(15, 190);
             this.pnlEstado.Name = "pnlEstado";
             this.pnlEstado.Size = new System.Drawing.Size(199, 23);
-            this.pnlEstado.TabIndex = 17;
+            this.pnlEstado.TabIndex = 6;
             this.pnlEstado.TamanhoBorda = 0;
             this.pnlEstado.TamanhoRaio = 4;
             // 
@@ -189,7 +189,7 @@ namespace RPC
             this.txtEstado.Location = new System.Drawing.Point(3, 3);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(192, 16);
-            this.txtEstado.TabIndex = 5;
+            this.txtEstado.TabIndex = 0;
             // 
             // pnlCustomDetalhes
             // 
@@ -202,7 +202,7 @@ namespace RPC
             this.pnlCustomDetalhes.Location = new System.Drawing.Point(15, 130);
             this.pnlCustomDetalhes.Name = "pnlCustomDetalhes";
             this.pnlCustomDetalhes.Size = new System.Drawing.Size(199, 23);
-            this.pnlCustomDetalhes.TabIndex = 16;
+            this.pnlCustomDetalhes.TabIndex = 4;
             this.pnlCustomDetalhes.TamanhoBorda = 0;
             this.pnlCustomDetalhes.TamanhoRaio = 4;
             // 
@@ -215,7 +215,7 @@ namespace RPC
             this.txtDetalhes.Location = new System.Drawing.Point(3, 3);
             this.txtDetalhes.Name = "txtDetalhes";
             this.txtDetalhes.Size = new System.Drawing.Size(192, 16);
-            this.txtDetalhes.TabIndex = 3;
+            this.txtDetalhes.TabIndex = 0;
             // 
             // pnlIdAplicacao
             // 
@@ -228,7 +228,7 @@ namespace RPC
             this.pnlIdAplicacao.Location = new System.Drawing.Point(15, 70);
             this.pnlIdAplicacao.Name = "pnlIdAplicacao";
             this.pnlIdAplicacao.Size = new System.Drawing.Size(199, 23);
-            this.pnlIdAplicacao.TabIndex = 15;
+            this.pnlIdAplicacao.TabIndex = 2;
             this.pnlIdAplicacao.TamanhoBorda = 0;
             this.pnlIdAplicacao.TamanhoRaio = 4;
             // 
@@ -241,7 +241,7 @@ namespace RPC
             this.txtIdAplicacao.Location = new System.Drawing.Point(3, 3);
             this.txtIdAplicacao.Name = "txtIdAplicacao";
             this.txtIdAplicacao.Size = new System.Drawing.Size(192, 16);
-            this.txtIdAplicacao.TabIndex = 1;
+            this.txtIdAplicacao.TabIndex = 0;
             // 
             // btnAlterarStatus
             // 
@@ -257,7 +257,7 @@ namespace RPC
             this.btnAlterarStatus.Location = new System.Drawing.Point(267, 243);
             this.btnAlterarStatus.Name = "btnAlterarStatus";
             this.btnAlterarStatus.Size = new System.Drawing.Size(194, 35);
-            this.btnAlterarStatus.TabIndex = 13;
+            this.btnAlterarStatus.TabIndex = 10;
             this.btnAlterarStatus.TamanhoBorda = 0;
             this.btnAlterarStatus.TamanhoRaio = 4;
             this.btnAlterarStatus.Text = "Alterar Status";
@@ -277,7 +277,7 @@ namespace RPC
             this.btnInicializar.Location = new System.Drawing.Point(267, 200);
             this.btnInicializar.Name = "btnInicializar";
             this.btnInicializar.Size = new System.Drawing.Size(194, 35);
-            this.btnInicializar.TabIndex = 12;
+            this.btnInicializar.TabIndex = 9;
             this.btnInicializar.TamanhoBorda = 0;
             this.btnInicializar.TamanhoRaio = 4;
             this.btnInicializar.Text = "Inicializar";
