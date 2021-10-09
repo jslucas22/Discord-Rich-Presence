@@ -13,12 +13,19 @@ namespace RPC
         #region ..:: Variáveis ::..
 
         private DiscordRpcClient _discordRpcClient;
-        
+
         private int _movimento;
         private int _movimentoX;
         private int _movimentoY;
 
         #endregion ..:: Variáveis ::..
+
+        #region ..:: Instancias ::..
+
+        private Helper _helper = new Helper();
+
+        #endregion ..:: Instancias ::..
+
 
         #region ..:: Métodos Auxiliares ::..
 
@@ -40,7 +47,7 @@ namespace RPC
                 };
                 _discordRpcClient.Initialize();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -51,7 +58,7 @@ namespace RPC
             }
         }
 
-        private void SalvarInformacoes()
+        public void SalvarInformacoes()
         {
             Settings.Default.ID = (long)Convert.ToDecimal(txtIdAplicacao.Text);
             Settings.Default.Estado = txtEstado.Text;
@@ -59,34 +66,6 @@ namespace RPC
             Settings.Default.ImagemRaw = txtImagemRaw.Text;
 
             Settings.Default.Save();
-        }
-
-
-
-        private void DefinirPresenca()
-        {
-            try
-            {
-                _discordRpcClient.SetPresence(new RichPresence()
-                {
-                    Details = txtDetalhes.Text,
-                    State = txtEstado.Text,
-                    Timestamps = Timestamps.Now,
-                    Assets = new Assets()
-                    {
-                        LargeImageKey = txtImagemRaw.Text,
-                        LargeImageText = "Discord RPC Tool by ZLucas <3",
-                    }
-                });
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                SalvarInformacoes();
-            }
         }
 
         private void CarregarInformacoes()
@@ -113,7 +92,7 @@ namespace RPC
 
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
         private void btnInicializar_Click_1(object sender, EventArgs e) => Inicializar();
-        private void btnAtualizar_Click_1(object sender, EventArgs e) => DefinirPresenca();
+        private void btnAtualizar_Click_1(object sender, EventArgs e) => _helper.DefinirPresenca(txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
 
 
         private void pnlHeader_MouseDown(object sender, MouseEventArgs e)

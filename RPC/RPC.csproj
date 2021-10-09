@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CantosArredondados.cs" />
+    <Compile Include="Classes\Helper.cs" />
     <Compile Include="Controles\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
