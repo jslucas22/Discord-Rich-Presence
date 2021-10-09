@@ -34,30 +34,6 @@ namespace RPC
             Region = Region.FromHrgn(CantosArredondados.ArredondarCantos(0, 0, Width, Height, 5, 5));
         }
 
-        private void Inicializar()
-        {
-            try
-            {
-                btnInicializar.Enabled = false;
-
-                _discordRpcClient = new DiscordRpcClient(txtIdAplicacao.Text);
-                _discordRpcClient.Logger = new ConsoleLogger()
-                {
-                    Level = LogLevel.Warning
-                };
-                _discordRpcClient.Initialize();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                btnAlterarStatus.Enabled = true;
-                SalvarInformacoes();
-            }
-        }
-
         public void SalvarInformacoes()
         {
             Settings.Default.ID = (long)Convert.ToDecimal(txtIdAplicacao.Text);
@@ -91,9 +67,8 @@ namespace RPC
         #region ..:: Eventos ::..
 
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
-        private void btnInicializar_Click_1(object sender, EventArgs e) => Inicializar();
+        private void btnInicializar_Click_1(object sender, EventArgs e) => _helper.Inicializar(txtIdAplicacao.Text);
         private void btnAtualizar_Click_1(object sender, EventArgs e) => _helper.DefinirPresenca(txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
-
 
         private void pnlHeader_MouseDown(object sender, MouseEventArgs e)
         {

@@ -336,8 +336,6 @@ namespace RPC
         private System.Windows.Forms.Label lblDetalhes;
         private System.Windows.Forms.Label lblIDApp;
         private System.Windows.Forms.Label lblImagemGrande;
-        private Controles.CustomButton btnInicializar;
-        private Controles.CustomButton btnAlterarStatus;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblNomePrograma;
         private Controles.CustomPanel pnlIdAplicacao;
@@ -346,6 +344,8 @@ namespace RPC
         private Controles.CustomPanel pnlImagemRaw;
         private System.Windows.Forms.PictureBox picFechar;
         private System.Windows.Forms.PictureBox picMinimizar;
+        public Controles.CustomButton btnInicializar;
+        public Controles.CustomButton btnAlterarStatus;
     }
 }
 
