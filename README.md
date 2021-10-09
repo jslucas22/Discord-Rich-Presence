@@ -25,9 +25,9 @@ Exemplo:
 
 #region ..:: Construtor ::..
 
-public MeuConstrutor(foo)
+public MeuConstrutor(foo bar)
 {
-  _foo = foo;
+  _foo = bar;
 }
 
 #endregion ..:: Construtor ::..
