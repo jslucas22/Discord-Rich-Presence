@@ -36,9 +36,9 @@ public MeuConstrutor(foo)
 
 ## Sistema em ação 🖼️
 
-![](Resources/Imagens/sistema.png)
+![](RPC/Resources/Imagens/sistema.png)
 
-![](Resources/Imagens/discord.png)
+![](RPC/Resources/Imagens/discord.png)
 
 # Licença 📃
 
