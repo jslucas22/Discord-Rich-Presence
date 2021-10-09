@@ -24,7 +24,7 @@ namespace RPC
             Region = Region.FromHrgn(CantosArredondados.ArredondarCantos(0, 0, Width, Height, 5, 5));
         }
 
-        public void SalvarInformacoes(string idAplicacao, string estado, string detalhes, string imagemRaw)
+        public void SalvarXFechar(string idAplicacao, string estado, string detalhes, string imagemRaw)
         {
             Settings.Default.ID = idAplicacao;
             Settings.Default.Estado = estado;
@@ -32,6 +32,8 @@ namespace RPC
             Settings.Default.ImagemRaw = imagemRaw;
 
             Settings.Default.Save();
+
+            Application.Exit();
         }
 
         private void CarregarInformacoes()
@@ -50,7 +52,7 @@ namespace RPC
         private void AlterarEstadoComponentes()
         {
             btnInicializar.Enabled = false;
-            btnAlterarStatus.Enabled = true;
+            btnDefinirValores.Enabled = true;
         }
 
         private void InicializarAplicacao()
@@ -79,7 +81,7 @@ namespace RPC
         {
             try
             {
-                _helper.DefinirPresenca();
+                _helper.DefinirPresenca(txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
             }
             catch (Exception ex)
             {
@@ -101,9 +103,18 @@ namespace RPC
 
         #region ..:: Eventos ::..
 
+        //# ------------------------------> Com Lambda <------------------------------
+
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
         private void btnInicializar_Click_1(object sender, EventArgs e) => InicializarAplicacao();
         private void btnAtualizar_Click_1(object sender, EventArgs e) => DefinirPresenca();
+        private void picFechar_Click(object sender, EventArgs e) => SalvarXFechar(txtIdAplicacao.Text, txtEstado.Text, txtDetalhes.Text, txtImagemRaw.Text);
+        private void picMinimizar_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
+        private void pnlHeader_MouseUp(object sender, MouseEventArgs e) => _movimento = 0;
+
+        //# ------------------------------> Com Lambda <------------------------------
+
+
         private void pnlHeader_MouseDown(object sender, MouseEventArgs e)
         {
             _movimento = 1;
@@ -118,10 +129,6 @@ namespace RPC
                 SetDesktopLocation(MousePosition.X - _movimentoX, MousePosition.Y - _movimentoY);
             }
         }
-
-        private void pnlHeader_MouseUp(object sender, MouseEventArgs e) => _movimento = 0;
-        private void picFechar_Click(object sender, EventArgs e) => Application.Exit();
-        private void picMinimizar_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 
         #endregion ..:: Eventos ::..                
     }

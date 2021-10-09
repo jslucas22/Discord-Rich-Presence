@@ -9,11 +9,11 @@ namespace RPC.Classes
         #region ..:: Variáveis ::..
         
         private DiscordRpcClient _discordRpcClient;
-        private zMain _main;
-        private string _idAplicaco;
-        private string _detalhes;
-        private string _estado;
-        private string _imagemRaw;
+        private zMain _main = new zMain();
+        private readonly string _idAplicaco;
+        private readonly string _detalhes;
+        private readonly string _estado;
+        private readonly string _imagemRaw;
 
         #endregion ..:: Variáives ::..
 
@@ -29,7 +29,6 @@ namespace RPC.Classes
         {
             try
             {
-                _main = new zMain();
                 _main.btnInicializar.Enabled = false;
 
                 _discordRpcClient = new DiscordRpcClient(_idAplicaco);
@@ -43,36 +42,27 @@ namespace RPC.Classes
             {
                 throw new Exception(ex.Message);
             }
-            finally
-            {
-                _main.btnAlterarStatus.Enabled = true;
-                _main.SalvarInformacoes(_idAplicaco, _estado, _detalhes, _imagemRaw);
-            }
         }
 
-        public void DefinirPresenca()
+        public void DefinirPresenca(string detalhes, string estado, string imagemRaw)
         {
             try
             {
                 _discordRpcClient.SetPresence(new RichPresence()
                 {
-                    Details = _detalhes,
-                    State = _estado,
+                    Details = detalhes,
+                    State = estado,
                     Timestamps = Timestamps.Now,
                     Assets = new Assets()
                     {
-                        LargeImageKey = _imagemRaw,
-                        LargeImageText = "Discord RPC Tool by ZLucas <3",
+                        LargeImageKey = imagemRaw,
+                        LargeImageText = "Discord RPC Tool by ZLucas <3"                        
                     }
                 });
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-            }
-            finally
-            {
-                _main.SalvarInformacoes(_idAplicaco, _estado, _detalhes, _imagemRaw);
             }
         }
     }

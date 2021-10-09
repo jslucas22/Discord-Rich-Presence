@@ -45,7 +45,7 @@ namespace RPC
             this.txtDetalhes = new System.Windows.Forms.TextBox();
             this.pnlIdAplicacao = new RPC.Controles.CustomPanel();
             this.txtIdAplicacao = new System.Windows.Forms.TextBox();
-            this.btnAlterarStatus = new RPC.Controles.CustomButton();
+            this.btnDefinirValores = new RPC.Controles.CustomButton();
             this.btnInicializar = new RPC.Controles.CustomButton();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).BeginInit();
@@ -109,22 +109,24 @@ namespace RPC
             // 
             // picMinimizar
             // 
+            this.picMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMinimizar.Image = global::RPC.Properties.Resources.minus_22px;
-            this.picMinimizar.Location = new System.Drawing.Point(418, 1);
+            this.picMinimizar.Location = new System.Drawing.Point(422, 4);
             this.picMinimizar.Name = "picMinimizar";
-            this.picMinimizar.Size = new System.Drawing.Size(22, 22);
+            this.picMinimizar.Size = new System.Drawing.Size(19, 19);
             this.picMinimizar.TabIndex = 3;
             this.picMinimizar.TabStop = false;
             this.picMinimizar.Click += new System.EventHandler(this.picMinimizar_Click);
             // 
             // picFechar
             // 
+            this.picFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picFechar.Image = global::RPC.Properties.Resources.multiply_22px;
-            this.picFechar.Location = new System.Drawing.Point(446, 1);
+            this.picFechar.Location = new System.Drawing.Point(446, 3);
             this.picFechar.Name = "picFechar";
-            this.picFechar.Size = new System.Drawing.Size(22, 22);
+            this.picFechar.Size = new System.Drawing.Size(19, 19);
             this.picFechar.TabIndex = 2;
             this.picFechar.TabStop = false;
             this.picFechar.Click += new System.EventHandler(this.picFechar_Click);
@@ -160,9 +162,9 @@ namespace RPC
             this.txtImagemRaw.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtImagemRaw.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.txtImagemRaw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
-            this.txtImagemRaw.Location = new System.Drawing.Point(3, 2);
+            this.txtImagemRaw.Location = new System.Drawing.Point(6, 3);
             this.txtImagemRaw.Name = "txtImagemRaw";
-            this.txtImagemRaw.Size = new System.Drawing.Size(192, 16);
+            this.txtImagemRaw.Size = new System.Drawing.Size(188, 16);
             this.txtImagemRaw.TabIndex = 0;
             // 
             // pnlEstado
@@ -186,9 +188,9 @@ namespace RPC
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstado.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
-            this.txtEstado.Location = new System.Drawing.Point(3, 3);
+            this.txtEstado.Location = new System.Drawing.Point(6, 4);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(192, 16);
+            this.txtEstado.Size = new System.Drawing.Size(188, 16);
             this.txtEstado.TabIndex = 0;
             // 
             // pnlCustomDetalhes
@@ -212,9 +214,9 @@ namespace RPC
             this.txtDetalhes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDetalhes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.txtDetalhes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
-            this.txtDetalhes.Location = new System.Drawing.Point(3, 3);
+            this.txtDetalhes.Location = new System.Drawing.Point(6, 4);
             this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.Size = new System.Drawing.Size(192, 16);
+            this.txtDetalhes.Size = new System.Drawing.Size(188, 16);
             this.txtDetalhes.TabIndex = 0;
             // 
             // pnlIdAplicacao
@@ -238,31 +240,31 @@ namespace RPC
             this.txtIdAplicacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdAplicacao.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.txtIdAplicacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
-            this.txtIdAplicacao.Location = new System.Drawing.Point(3, 3);
+            this.txtIdAplicacao.Location = new System.Drawing.Point(6, 4);
             this.txtIdAplicacao.Name = "txtIdAplicacao";
-            this.txtIdAplicacao.Size = new System.Drawing.Size(192, 16);
+            this.txtIdAplicacao.Size = new System.Drawing.Size(188, 16);
             this.txtIdAplicacao.TabIndex = 0;
             // 
-            // btnAlterarStatus
+            // btnDefinirValores
             // 
-            this.btnAlterarStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btnAlterarStatus.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAlterarStatus.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btnAlterarStatus.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAlterarStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAlterarStatus.Enabled = false;
-            this.btnAlterarStatus.FlatAppearance.BorderSize = 0;
-            this.btnAlterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterarStatus.ForeColor = System.Drawing.Color.White;
-            this.btnAlterarStatus.Location = new System.Drawing.Point(267, 243);
-            this.btnAlterarStatus.Name = "btnAlterarStatus";
-            this.btnAlterarStatus.Size = new System.Drawing.Size(194, 35);
-            this.btnAlterarStatus.TabIndex = 10;
-            this.btnAlterarStatus.TamanhoBorda = 0;
-            this.btnAlterarStatus.TamanhoRaio = 4;
-            this.btnAlterarStatus.Text = "Alterar Status";
-            this.btnAlterarStatus.UseVisualStyleBackColor = false;
-            this.btnAlterarStatus.Click += new System.EventHandler(this.btnAtualizar_Click_1);
+            this.btnDefinirValores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btnDefinirValores.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnDefinirValores.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btnDefinirValores.CorTextoBotao = System.Drawing.Color.White;
+            this.btnDefinirValores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDefinirValores.Enabled = false;
+            this.btnDefinirValores.FlatAppearance.BorderSize = 0;
+            this.btnDefinirValores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDefinirValores.ForeColor = System.Drawing.Color.White;
+            this.btnDefinirValores.Location = new System.Drawing.Point(267, 243);
+            this.btnDefinirValores.Name = "btnDefinirValores";
+            this.btnDefinirValores.Size = new System.Drawing.Size(194, 35);
+            this.btnDefinirValores.TabIndex = 10;
+            this.btnDefinirValores.TamanhoBorda = 0;
+            this.btnDefinirValores.TamanhoRaio = 4;
+            this.btnDefinirValores.Text = "Definir Valores";
+            this.btnDefinirValores.UseVisualStyleBackColor = false;
+            this.btnDefinirValores.Click += new System.EventHandler(this.btnAtualizar_Click_1);
             // 
             // btnInicializar
             // 
@@ -295,7 +297,7 @@ namespace RPC
             this.Controls.Add(this.pnlCustomDetalhes);
             this.Controls.Add(this.pnlIdAplicacao);
             this.Controls.Add(this.pnlHeader);
-            this.Controls.Add(this.btnAlterarStatus);
+            this.Controls.Add(this.btnDefinirValores);
             this.Controls.Add(this.btnInicializar);
             this.Controls.Add(this.lblImagemGrande);
             this.Controls.Add(this.lblIDApp);
@@ -345,7 +347,7 @@ namespace RPC
         private System.Windows.Forms.PictureBox picFechar;
         private System.Windows.Forms.PictureBox picMinimizar;
         public Controles.CustomButton btnInicializar;
-        public Controles.CustomButton btnAlterarStatus;
+        public Controles.CustomButton btnDefinirValores;
     }
 }
 
