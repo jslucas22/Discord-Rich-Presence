@@ -83,6 +83,10 @@ namespace RPC
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                SalvarInformacoes();
+            }
         }
 
         private void CarregarInformacoes()
@@ -110,7 +114,25 @@ namespace RPC
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
         private void btnInicializar_Click_1(object sender, EventArgs e) => Inicializar();
         private void btnAtualizar_Click_1(object sender, EventArgs e) => DefinirPresenca();
-        
+
+
+        private void pnlHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            _movimento = 1;
+            _movimentoX = e.X;
+            _movimentoY = e.Y;
+        }
+
+        private void pnlHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_movimento > 0)
+            {
+                SetDesktopLocation(MousePosition.X - _movimentoX, MousePosition.Y - _movimentoY);
+            }
+        }
+
+        private void pnlHeader_MouseUp(object sender, MouseEventArgs e) => _movimento = 0;
+
         #endregion ..:: Eventos ::..
     }
 }

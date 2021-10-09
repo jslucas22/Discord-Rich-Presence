@@ -38,6 +38,7 @@ namespace RPC
             this.lblIDApp = new System.Windows.Forms.Label();
             this.lblImagemGrande = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.picFechar = new System.Windows.Forms.PictureBox();
             this.lblNomePrograma = new System.Windows.Forms.Label();
             this.btnAlterarStatus = new RPC.Controles.CustomButton();
             this.btnInicializar = new RPC.Controles.CustomButton();
@@ -45,13 +46,12 @@ namespace RPC
             this.pnlCustomDetalhes = new RPC.Controles.CustomPanel();
             this.pnlEstado = new RPC.Controles.CustomPanel();
             this.pnlImagemRaw = new RPC.Controles.CustomPanel();
-            this.picFechar = new System.Windows.Forms.PictureBox();
             this.pnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFechar)).BeginInit();
             this.pnlIdAplicacao.SuspendLayout();
             this.pnlCustomDetalhes.SuspendLayout();
             this.pnlEstado.SuspendLayout();
             this.pnlImagemRaw.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFechar)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEstado
@@ -144,6 +144,18 @@ namespace RPC
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(473, 25);
             this.pnlHeader.TabIndex = 14;
+            this.pnlHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseDown);
+            this.pnlHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseMove);
+            this.pnlHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseUp);
+            // 
+            // picFechar
+            // 
+            this.picFechar.Image = global::RPC.Properties.Resources.multiply_22px;
+            this.picFechar.Location = new System.Drawing.Point(446, 1);
+            this.picFechar.Name = "picFechar";
+            this.picFechar.Size = new System.Drawing.Size(22, 22);
+            this.picFechar.TabIndex = 2;
+            this.picFechar.TabStop = false;
             // 
             // lblNomePrograma
             // 
@@ -256,16 +268,7 @@ namespace RPC
             this.pnlImagemRaw.TamanhoBorda = 0;
             this.pnlImagemRaw.TamanhoRaio = 4;
             // 
-            // picFechar
-            // 
-            this.picFechar.Image = global::RPC.Properties.Resources.multiply_22px;
-            this.picFechar.Location = new System.Drawing.Point(446, 1);
-            this.picFechar.Name = "picFechar";
-            this.picFechar.Size = new System.Drawing.Size(22, 22);
-            this.picFechar.TabIndex = 2;
-            this.picFechar.TabStop = false;
-            // 
-            // z
+            // zMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -286,12 +289,13 @@ namespace RPC
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.Name = "z";
+            this.Name = "zMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "zSoft | Rich Presence";
             this.Load += new System.EventHandler(this.z_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFechar)).EndInit();
             this.pnlIdAplicacao.ResumeLayout(false);
             this.pnlIdAplicacao.PerformLayout();
             this.pnlCustomDetalhes.ResumeLayout(false);
@@ -300,7 +304,6 @@ namespace RPC
             this.pnlEstado.PerformLayout();
             this.pnlImagemRaw.ResumeLayout(false);
             this.pnlImagemRaw.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
