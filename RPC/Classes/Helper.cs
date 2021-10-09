@@ -9,22 +9,30 @@ namespace RPC.Classes
         #region ..:: Variáveis ::..
         
         private DiscordRpcClient _discordRpcClient;
+        private zMain _main;
+        private string _idAplicaco;
+        private string _detalhes;
+        private string _estado;
+        private string _imagemRaw;
 
         #endregion ..:: Variáives ::..
 
-        #region ..:: Instancias ::..
+        public Helper(string idAplicaco, string detalhes, string estado, string imagemRaw)
+        {
+            _idAplicaco = idAplicaco;
+            _detalhes = detalhes;
+            _estado = estado;
+            _imagemRaw = imagemRaw;
+        }
 
-        private zMain _main = new zMain();
-
-        #endregion ..:: Instancias ::..
-
-        public void Inicializar(string idAplicacao)
+        public void Inicializar()
         {
             try
             {
+                _main = new zMain();
                 _main.btnInicializar.Enabled = false;
 
-                _discordRpcClient = new DiscordRpcClient(idAplicacao);
+                _discordRpcClient = new DiscordRpcClient(_idAplicaco);
                 _discordRpcClient.Logger = new ConsoleLogger()
                 {
                     Level = LogLevel.Warning
@@ -38,22 +46,22 @@ namespace RPC.Classes
             finally
             {
                 _main.btnAlterarStatus.Enabled = true;
-                _main.SalvarInformacoes();
+                _main.SalvarInformacoes(_idAplicaco);
             }
         }
 
-        public void DefinirPresenca(string detalhes, string estado, string imagemRaw)
+        public void DefinirPresenca()
         {
             try
             {
                 _discordRpcClient.SetPresence(new RichPresence()
                 {
-                    Details = detalhes,
-                    State = estado,
+                    Details = _detalhes,
+                    State = _estado,
                     Timestamps = Timestamps.Now,
                     Assets = new Assets()
                     {
-                        LargeImageKey = imagemRaw,
+                        LargeImageKey = _imagemRaw,
                         LargeImageText = "Discord RPC Tool by ZLucas <3",
                     }
                 });
@@ -64,7 +72,7 @@ namespace RPC.Classes
             }
             finally
             {
-                _main.SalvarInformacoes();
+                _main.SalvarInformacoes(_idAplicaco, _estado, _detalhes, _imagemRaw);
             }
         }
     }

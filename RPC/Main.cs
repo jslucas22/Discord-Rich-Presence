@@ -1,6 +1,4 @@
-﻿using DiscordRPC;
-using DiscordRPC.Logging;
-using RPC.Classes;
+﻿using RPC.Classes;
 using RPC.Properties;
 using System;
 using System.Drawing;
@@ -12,20 +10,13 @@ namespace RPC
     {
         #region ..:: Variáveis ::..
 
-        private DiscordRpcClient _discordRpcClient;
-
         private int _movimento;
         private int _movimentoX;
         private int _movimentoY;
+        private Helper _helper;
+        private bool _camposVazios;
 
         #endregion ..:: Variáveis ::..
-
-        #region ..:: Instancias ::..
-
-        private Helper _helper = new Helper();
-
-        #endregion ..:: Instancias ::..
-
 
         #region ..:: Métodos Auxiliares ::..
 
@@ -34,12 +25,12 @@ namespace RPC
             Region = Region.FromHrgn(CantosArredondados.ArredondarCantos(0, 0, Width, Height, 5, 5));
         }
 
-        public void SalvarInformacoes()
+        public void SalvarInformacoes(string idAplicacao, string estado, string detalhes, string imagemRaw)
         {
-            Settings.Default.ID = (long)Convert.ToDecimal(txtIdAplicacao.Text);
-            Settings.Default.Estado = txtEstado.Text;
-            Settings.Default.Detalhes = txtDetalhes.Text;
-            Settings.Default.ImagemRaw = txtImagemRaw.Text;
+            Settings.Default.ID = idAplicacao;
+            Settings.Default.Estado = estado;
+            Settings.Default.Detalhes = detalhes;
+            Settings.Default.ImagemRaw = imagemRaw;
 
             Settings.Default.Save();
         }
@@ -50,6 +41,27 @@ namespace RPC
             txtDetalhes.Text = Settings.Default.Detalhes;
             txtEstado.Text = Settings.Default.Estado;
             txtImagemRaw.Text = Settings.Default.ImagemRaw;
+        }
+
+        private bool ExisteCamposVazios()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox && string.IsNullOrEmpty(control.Text))
+                {
+                    _camposVazios = true;
+                }
+                else
+                {
+                    _camposVazios = false;
+                }
+            }
+            return _camposVazios;
+        }
+
+        private void Inicializar()
+        {
+            _helper = new Helper(txtIdAplicacao.Text, txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
         }
 
         #endregion ..:: Métodos Auxiliares ::..
@@ -67,8 +79,24 @@ namespace RPC
         #region ..:: Eventos ::..
 
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
-        private void btnInicializar_Click_1(object sender, EventArgs e) => _helper.Inicializar(txtIdAplicacao.Text);
-        private void btnAtualizar_Click_1(object sender, EventArgs e) => _helper.DefinirPresenca(txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
+      
+        private void btnInicializar_Click_1(object sender, EventArgs e)
+        {
+            Inicializar();
+
+            if (!ExisteCamposVazios())
+            {
+                _helper.Inicializar();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos antes de continuar!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void btnAtualizar_Click_1(object sender, EventArgs e)
+        {
+            _helper.DefinirPresenca();
+        }
 
         private void pnlHeader_MouseDown(object sender, MouseEventArgs e)
         {

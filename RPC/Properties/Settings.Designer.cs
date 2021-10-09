@@ -25,10 +25,10 @@ namespace RPC.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long ID {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ID {
             get {
-                return ((long)(this["ID"]));
+                return ((string)(this["ID"]));
             }
             set {
                 this["ID"] = value;
