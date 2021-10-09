@@ -42,7 +42,7 @@ alterar o status de atividade.
 ![](RPC/Resources/Imagens/sistema_novo.png)
 
 Após Clicado em "Definir Status de Atividade", já podemos ver que o valor referente ao 
-status de atividade também foi alterado
+status de atividade também foi alterado no Discord
 
 ![](RPC/Resources/Imagens/discord.png)
 
