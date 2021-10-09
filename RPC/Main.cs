@@ -46,7 +46,6 @@ namespace RPC
             Settings.Default.Estado = txtEstado.Text;
             Settings.Default.Detalhes = txtDetalhes.Text;
             Settings.Default.ImagemRaw = txtImagemRaw.Text;
-            Settings.Default.ImagemBlob = txtImagemBlob.Text;
 
             Settings.Default.Save();
         }
@@ -65,8 +64,7 @@ namespace RPC
                     Assets = new Assets()
                     {
                         LargeImageKey = txtImagemRaw.Text,
-                        LargeImageText = "ZLucas B!tches",
-                        SmallImageKey = txtImagemBlob.Text
+                        LargeImageText = "Discord RPC Tool by ZLucas <3",
                     }
                 });
             }
@@ -82,7 +80,6 @@ namespace RPC
             txtDetalhes.Text = Settings.Default.Detalhes;
             txtEstado.Text = Settings.Default.Estado;
             txtImagemRaw.Text = Settings.Default.ImagemRaw;
-            txtImagemBlob.Text = Settings.Default.ImagemBlob;
         }
 
         #endregion ..:: Métodos Auxiliares ::..
