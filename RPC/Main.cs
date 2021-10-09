@@ -46,7 +46,7 @@ namespace RPC
 
         private void Inicializar()
         {
-            _helper = new Helper(txtIdAplicacao.Text, txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
+            _helper = new Helper(txtIdAplicacao.Text);
         }
 
         private void AlterarEstadoComponentes()
