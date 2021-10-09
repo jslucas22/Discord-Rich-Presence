@@ -47,6 +47,46 @@ namespace RPC
             _helper = new Helper(txtIdAplicacao.Text, txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
         }
 
+        private void AlterarEstadoComponentes()
+        {
+            btnInicializar.Enabled = false;
+            btnAlterarStatus.Enabled = true;
+        }
+
+        private void InicializarAplicacao()
+        {
+            try
+            {
+                Inicializar();
+
+                if (!string.IsNullOrEmpty(txtIdAplicacao.Text))
+                {
+                    _helper.Inicializar();
+                    AlterarEstadoComponentes();
+                }
+                else
+                {
+                    MessageBox.Show("Informe o ID da aplicação antes de continuar!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DefinirPresenca()
+        {
+            try
+            {
+                _helper.DefinirPresenca();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         #endregion ..:: Métodos Auxiliares ::..
 
         #region ..:: Construtor ::..
@@ -62,24 +102,9 @@ namespace RPC
         #region ..:: Eventos ::..
 
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
-      
-        private void btnInicializar_Click_1(object sender, EventArgs e)
-        {
-            Inicializar();
 
-            if (string.IsNullOrEmpty(txtIdAplicacao.Text))
-            {
-                _helper.Inicializar();
-            }
-            else
-            {
-                MessageBox.Show("Informe o ID da aplicação antes de continuar!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        private void btnAtualizar_Click_1(object sender, EventArgs e)
-        {
-            _helper.DefinirPresenca();
-        }
+        private void btnInicializar_Click_1(object sender, EventArgs e) => InicializarAplicacao();
+        private void btnAtualizar_Click_1(object sender, EventArgs e) => DefinirPresenca();
 
         private void pnlHeader_MouseDown(object sender, MouseEventArgs e)
         {
