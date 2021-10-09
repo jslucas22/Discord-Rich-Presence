@@ -7,30 +7,27 @@ namespace RPC.Classes
     public class Helper
     {
         #region ..:: Variáveis ::..
-        
+
         private DiscordRpcClient _discordRpcClient;
-        private zMain _main = new zMain();
         private readonly string _idAplicaco;
-        private readonly string _detalhes;
-        private readonly string _estado;
-        private readonly string _imagemRaw;
 
         #endregion ..:: Variáives ::..
 
-        public Helper(string idAplicaco, string detalhes, string estado, string imagemRaw)
+        #region ..:: Construtor ::..
+
+        public Helper(string idAplicaco)
         {
             _idAplicaco = idAplicaco;
-            _detalhes = detalhes;
-            _estado = estado;
-            _imagemRaw = imagemRaw;
         }
+
+        #endregion ..:: Construtor ::..
+
+        #region ..:: Metodos ::..
 
         public void Inicializar()
         {
             try
             {
-                _main.btnInicializar.Enabled = false;
-
                 _discordRpcClient = new DiscordRpcClient(_idAplicaco);
                 _discordRpcClient.Logger = new ConsoleLogger()
                 {
@@ -56,7 +53,7 @@ namespace RPC.Classes
                     Assets = new Assets()
                     {
                         LargeImageKey = imagemRaw,
-                        LargeImageText = "Discord RPC Tool by ZLucas <3"                        
+                        LargeImageText = "Discord RPC Tool by ZLucas <3"
                     }
                 });
             }
@@ -65,5 +62,7 @@ namespace RPC.Classes
                 throw new Exception(ex.Message);
             }
         }
+
+        #endregion ..:: Metodos ::..
     }
 }
