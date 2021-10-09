@@ -43,22 +43,6 @@ namespace RPC
             txtImagemRaw.Text = Settings.Default.ImagemRaw;
         }
 
-        private bool ExisteCamposVazios()
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox && string.IsNullOrEmpty(control.Text))
-                {
-                    _camposVazios = true;
-                }
-                else
-                {
-                    _camposVazios = false;
-                }
-            }
-            return _camposVazios;
-        }
-
         private void Inicializar()
         {
             _helper = new Helper(txtIdAplicacao.Text, txtDetalhes.Text, txtEstado.Text, txtImagemRaw.Text);
@@ -84,13 +68,13 @@ namespace RPC
         {
             Inicializar();
 
-            if (!ExisteCamposVazios())
+            if (string.IsNullOrEmpty(txtIdAplicacao.Text))
             {
                 _helper.Inicializar();
             }
             else
             {
-                MessageBox.Show("Preencha todos os campos antes de continuar!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Informe o ID da aplicação antes de continuar!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void btnAtualizar_Click_1(object sender, EventArgs e)

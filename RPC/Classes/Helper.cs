@@ -46,7 +46,7 @@ namespace RPC.Classes
             finally
             {
                 _main.btnAlterarStatus.Enabled = true;
-                _main.SalvarInformacoes(_idAplicaco);
+                _main.SalvarInformacoes(_idAplicaco, _estado, _detalhes, _imagemRaw);
             }
         }
 
