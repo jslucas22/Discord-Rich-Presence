@@ -132,7 +132,8 @@ namespace RPC
         }
 
         private void pnlHeader_MouseUp(object sender, MouseEventArgs e) => _movimento = 0;
+        private void picFechar_Click(object sender, EventArgs e) => Application.Exit();
 
-        #endregion ..:: Eventos ::..
+        #endregion ..:: Eventos ::..        
     }
 }

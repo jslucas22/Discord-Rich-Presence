@@ -29,10 +29,6 @@ namespace RPC
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.txtDetalhes = new System.Windows.Forms.TextBox();
-            this.txtIdAplicacao = new System.Windows.Forms.TextBox();
-            this.txtImagemRaw = new System.Windows.Forms.TextBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblDetalhes = new System.Windows.Forms.Label();
             this.lblIDApp = new System.Windows.Forms.Label();
@@ -40,63 +36,23 @@ namespace RPC
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.picFechar = new System.Windows.Forms.PictureBox();
             this.lblNomePrograma = new System.Windows.Forms.Label();
+            this.pnlImagemRaw = new RPC.Controles.CustomPanel();
+            this.txtImagemRaw = new System.Windows.Forms.TextBox();
+            this.pnlEstado = new RPC.Controles.CustomPanel();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.pnlCustomDetalhes = new RPC.Controles.CustomPanel();
+            this.txtDetalhes = new System.Windows.Forms.TextBox();
+            this.pnlIdAplicacao = new RPC.Controles.CustomPanel();
+            this.txtIdAplicacao = new System.Windows.Forms.TextBox();
             this.btnAlterarStatus = new RPC.Controles.CustomButton();
             this.btnInicializar = new RPC.Controles.CustomButton();
-            this.pnlIdAplicacao = new RPC.Controles.CustomPanel();
-            this.pnlCustomDetalhes = new RPC.Controles.CustomPanel();
-            this.pnlEstado = new RPC.Controles.CustomPanel();
-            this.pnlImagemRaw = new RPC.Controles.CustomPanel();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFechar)).BeginInit();
-            this.pnlIdAplicacao.SuspendLayout();
-            this.pnlCustomDetalhes.SuspendLayout();
-            this.pnlEstado.SuspendLayout();
             this.pnlImagemRaw.SuspendLayout();
+            this.pnlEstado.SuspendLayout();
+            this.pnlCustomDetalhes.SuspendLayout();
+            this.pnlIdAplicacao.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
-            this.txtEstado.Location = new System.Drawing.Point(3, 3);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(192, 16);
-            this.txtEstado.TabIndex = 5;
-            // 
-            // txtDetalhes
-            // 
-            this.txtDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.txtDetalhes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDetalhes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.txtDetalhes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
-            this.txtDetalhes.Location = new System.Drawing.Point(3, 3);
-            this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.Size = new System.Drawing.Size(192, 16);
-            this.txtDetalhes.TabIndex = 3;
-            // 
-            // txtIdAplicacao
-            // 
-            this.txtIdAplicacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.txtIdAplicacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdAplicacao.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.txtIdAplicacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
-            this.txtIdAplicacao.Location = new System.Drawing.Point(3, 3);
-            this.txtIdAplicacao.Name = "txtIdAplicacao";
-            this.txtIdAplicacao.Size = new System.Drawing.Size(192, 16);
-            this.txtIdAplicacao.TabIndex = 1;
-            // 
-            // txtImagemRaw
-            // 
-            this.txtImagemRaw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.txtImagemRaw.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImagemRaw.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.txtImagemRaw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
-            this.txtImagemRaw.Location = new System.Drawing.Point(3, 2);
-            this.txtImagemRaw.Name = "txtImagemRaw";
-            this.txtImagemRaw.Size = new System.Drawing.Size(192, 16);
-            this.txtImagemRaw.TabIndex = 7;
             // 
             // lblEstado
             // 
@@ -150,12 +106,14 @@ namespace RPC
             // 
             // picFechar
             // 
+            this.picFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picFechar.Image = global::RPC.Properties.Resources.multiply_22px;
             this.picFechar.Location = new System.Drawing.Point(446, 1);
             this.picFechar.Name = "picFechar";
             this.picFechar.Size = new System.Drawing.Size(22, 22);
             this.picFechar.TabIndex = 2;
             this.picFechar.TabStop = false;
+            this.picFechar.Click += new System.EventHandler(this.picFechar_Click);
             // 
             // lblNomePrograma
             // 
@@ -166,6 +124,110 @@ namespace RPC
             this.lblNomePrograma.Size = new System.Drawing.Size(151, 13);
             this.lblNomePrograma.TabIndex = 1;
             this.lblNomePrograma.Text = "zRPC | Discord Rich Presence";
+            // 
+            // pnlImagemRaw
+            // 
+            this.pnlImagemRaw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.pnlImagemRaw.Controls.Add(this.txtImagemRaw);
+            this.pnlImagemRaw.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pnlImagemRaw.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.pnlImagemRaw.CorTextoBotao = System.Drawing.Color.White;
+            this.pnlImagemRaw.ForeColor = System.Drawing.Color.White;
+            this.pnlImagemRaw.Location = new System.Drawing.Point(15, 251);
+            this.pnlImagemRaw.Name = "pnlImagemRaw";
+            this.pnlImagemRaw.Size = new System.Drawing.Size(199, 23);
+            this.pnlImagemRaw.TabIndex = 18;
+            this.pnlImagemRaw.TamanhoBorda = 0;
+            this.pnlImagemRaw.TamanhoRaio = 4;
+            // 
+            // txtImagemRaw
+            // 
+            this.txtImagemRaw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.txtImagemRaw.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtImagemRaw.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.txtImagemRaw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
+            this.txtImagemRaw.Location = new System.Drawing.Point(3, 2);
+            this.txtImagemRaw.Name = "txtImagemRaw";
+            this.txtImagemRaw.Size = new System.Drawing.Size(192, 16);
+            this.txtImagemRaw.TabIndex = 7;
+            // 
+            // pnlEstado
+            // 
+            this.pnlEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.pnlEstado.Controls.Add(this.txtEstado);
+            this.pnlEstado.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pnlEstado.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.pnlEstado.CorTextoBotao = System.Drawing.Color.White;
+            this.pnlEstado.ForeColor = System.Drawing.Color.White;
+            this.pnlEstado.Location = new System.Drawing.Point(15, 190);
+            this.pnlEstado.Name = "pnlEstado";
+            this.pnlEstado.Size = new System.Drawing.Size(199, 23);
+            this.pnlEstado.TabIndex = 17;
+            this.pnlEstado.TamanhoBorda = 0;
+            this.pnlEstado.TamanhoRaio = 4;
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
+            this.txtEstado.Location = new System.Drawing.Point(3, 3);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(192, 16);
+            this.txtEstado.TabIndex = 5;
+            // 
+            // pnlCustomDetalhes
+            // 
+            this.pnlCustomDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.pnlCustomDetalhes.Controls.Add(this.txtDetalhes);
+            this.pnlCustomDetalhes.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pnlCustomDetalhes.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.pnlCustomDetalhes.CorTextoBotao = System.Drawing.Color.White;
+            this.pnlCustomDetalhes.ForeColor = System.Drawing.Color.White;
+            this.pnlCustomDetalhes.Location = new System.Drawing.Point(15, 130);
+            this.pnlCustomDetalhes.Name = "pnlCustomDetalhes";
+            this.pnlCustomDetalhes.Size = new System.Drawing.Size(199, 23);
+            this.pnlCustomDetalhes.TabIndex = 16;
+            this.pnlCustomDetalhes.TamanhoBorda = 0;
+            this.pnlCustomDetalhes.TamanhoRaio = 4;
+            // 
+            // txtDetalhes
+            // 
+            this.txtDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.txtDetalhes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDetalhes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.txtDetalhes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
+            this.txtDetalhes.Location = new System.Drawing.Point(3, 3);
+            this.txtDetalhes.Name = "txtDetalhes";
+            this.txtDetalhes.Size = new System.Drawing.Size(192, 16);
+            this.txtDetalhes.TabIndex = 3;
+            // 
+            // pnlIdAplicacao
+            // 
+            this.pnlIdAplicacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.pnlIdAplicacao.Controls.Add(this.txtIdAplicacao);
+            this.pnlIdAplicacao.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pnlIdAplicacao.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.pnlIdAplicacao.CorTextoBotao = System.Drawing.Color.White;
+            this.pnlIdAplicacao.ForeColor = System.Drawing.Color.White;
+            this.pnlIdAplicacao.Location = new System.Drawing.Point(15, 70);
+            this.pnlIdAplicacao.Name = "pnlIdAplicacao";
+            this.pnlIdAplicacao.Size = new System.Drawing.Size(199, 23);
+            this.pnlIdAplicacao.TabIndex = 15;
+            this.pnlIdAplicacao.TamanhoBorda = 0;
+            this.pnlIdAplicacao.TamanhoRaio = 4;
+            // 
+            // txtIdAplicacao
+            // 
+            this.txtIdAplicacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
+            this.txtIdAplicacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdAplicacao.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.txtIdAplicacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(189)))), ((int)(((byte)(199)))));
+            this.txtIdAplicacao.Location = new System.Drawing.Point(3, 3);
+            this.txtIdAplicacao.Name = "txtIdAplicacao";
+            this.txtIdAplicacao.Size = new System.Drawing.Size(192, 16);
+            this.txtIdAplicacao.TabIndex = 1;
             // 
             // btnAlterarStatus
             // 
@@ -208,66 +270,6 @@ namespace RPC
             this.btnInicializar.UseVisualStyleBackColor = false;
             this.btnInicializar.Click += new System.EventHandler(this.btnInicializar_Click_1);
             // 
-            // pnlIdAplicacao
-            // 
-            this.pnlIdAplicacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.pnlIdAplicacao.Controls.Add(this.txtIdAplicacao);
-            this.pnlIdAplicacao.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.pnlIdAplicacao.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.pnlIdAplicacao.CorTextoBotao = System.Drawing.Color.White;
-            this.pnlIdAplicacao.ForeColor = System.Drawing.Color.White;
-            this.pnlIdAplicacao.Location = new System.Drawing.Point(15, 70);
-            this.pnlIdAplicacao.Name = "pnlIdAplicacao";
-            this.pnlIdAplicacao.Size = new System.Drawing.Size(199, 23);
-            this.pnlIdAplicacao.TabIndex = 15;
-            this.pnlIdAplicacao.TamanhoBorda = 0;
-            this.pnlIdAplicacao.TamanhoRaio = 4;
-            // 
-            // pnlCustomDetalhes
-            // 
-            this.pnlCustomDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.pnlCustomDetalhes.Controls.Add(this.txtDetalhes);
-            this.pnlCustomDetalhes.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.pnlCustomDetalhes.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.pnlCustomDetalhes.CorTextoBotao = System.Drawing.Color.White;
-            this.pnlCustomDetalhes.ForeColor = System.Drawing.Color.White;
-            this.pnlCustomDetalhes.Location = new System.Drawing.Point(15, 130);
-            this.pnlCustomDetalhes.Name = "pnlCustomDetalhes";
-            this.pnlCustomDetalhes.Size = new System.Drawing.Size(199, 23);
-            this.pnlCustomDetalhes.TabIndex = 16;
-            this.pnlCustomDetalhes.TamanhoBorda = 0;
-            this.pnlCustomDetalhes.TamanhoRaio = 4;
-            // 
-            // pnlEstado
-            // 
-            this.pnlEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.pnlEstado.Controls.Add(this.txtEstado);
-            this.pnlEstado.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.pnlEstado.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.pnlEstado.CorTextoBotao = System.Drawing.Color.White;
-            this.pnlEstado.ForeColor = System.Drawing.Color.White;
-            this.pnlEstado.Location = new System.Drawing.Point(15, 190);
-            this.pnlEstado.Name = "pnlEstado";
-            this.pnlEstado.Size = new System.Drawing.Size(199, 23);
-            this.pnlEstado.TabIndex = 17;
-            this.pnlEstado.TamanhoBorda = 0;
-            this.pnlEstado.TamanhoRaio = 4;
-            // 
-            // pnlImagemRaw
-            // 
-            this.pnlImagemRaw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.pnlImagemRaw.Controls.Add(this.txtImagemRaw);
-            this.pnlImagemRaw.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.pnlImagemRaw.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(60)))), ((int)(((byte)(69)))));
-            this.pnlImagemRaw.CorTextoBotao = System.Drawing.Color.White;
-            this.pnlImagemRaw.ForeColor = System.Drawing.Color.White;
-            this.pnlImagemRaw.Location = new System.Drawing.Point(15, 251);
-            this.pnlImagemRaw.Name = "pnlImagemRaw";
-            this.pnlImagemRaw.Size = new System.Drawing.Size(199, 23);
-            this.pnlImagemRaw.TabIndex = 18;
-            this.pnlImagemRaw.TamanhoBorda = 0;
-            this.pnlImagemRaw.TamanhoRaio = 4;
-            // 
             // zMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,14 +298,14 @@ namespace RPC
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFechar)).EndInit();
-            this.pnlIdAplicacao.ResumeLayout(false);
-            this.pnlIdAplicacao.PerformLayout();
-            this.pnlCustomDetalhes.ResumeLayout(false);
-            this.pnlCustomDetalhes.PerformLayout();
-            this.pnlEstado.ResumeLayout(false);
-            this.pnlEstado.PerformLayout();
             this.pnlImagemRaw.ResumeLayout(false);
             this.pnlImagemRaw.PerformLayout();
+            this.pnlEstado.ResumeLayout(false);
+            this.pnlEstado.PerformLayout();
+            this.pnlCustomDetalhes.ResumeLayout(false);
+            this.pnlCustomDetalhes.PerformLayout();
+            this.pnlIdAplicacao.ResumeLayout(false);
+            this.pnlIdAplicacao.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
