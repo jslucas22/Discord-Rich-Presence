@@ -1,7 +1,7 @@
 ﻿
 namespace RPC
 {
-    partial class z
+    partial class zMain
     {
         /// <summary>
         /// Variável de designer necessária.

@@ -1,20 +1,31 @@
 ﻿using DiscordRPC;
 using DiscordRPC.Logging;
+using RPC.Classes;
 using RPC.Properties;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RPC
 {
-    public partial class z : Form
+    public partial class zMain : Form
     {
         #region ..:: Variáveis ::..
 
         private DiscordRpcClient _discordRpcClient;
+        
+        private int _movimento;
+        private int _movimentoX;
+        private int _movimentoY;
 
         #endregion ..:: Variáveis ::..
 
         #region ..:: Métodos Auxiliares ::..
+
+        private void ArredondarCantos()
+        {
+            Region = Region.FromHrgn(CantosArredondados.ArredondarCantos(0, 0, Width, Height, 5, 5));
+        }
 
         private void Inicializar()
         {
@@ -86,9 +97,10 @@ namespace RPC
 
         #region ..:: Construtor ::..
 
-        public z()
+        public zMain()
         {
             InitializeComponent();
+            ArredondarCantos();
         }
 
         #endregion ..:: Construtor ::..
