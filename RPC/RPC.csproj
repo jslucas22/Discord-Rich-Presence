@@ -55,6 +55,9 @@
     <Compile Include="Controles\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
