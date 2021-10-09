@@ -102,10 +102,8 @@ namespace RPC
         #region ..:: Eventos ::..
 
         private void z_Load(object sender, EventArgs e) => CarregarInformacoes();
-
         private void btnInicializar_Click_1(object sender, EventArgs e) => InicializarAplicacao();
         private void btnAtualizar_Click_1(object sender, EventArgs e) => DefinirPresenca();
-
         private void pnlHeader_MouseDown(object sender, MouseEventArgs e)
         {
             _movimento = 1;
