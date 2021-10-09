@@ -14,7 +14,6 @@ namespace RPC
         private int _movimentoX;
         private int _movimentoY;
         private Helper _helper;
-        private bool _camposVazios;
 
         #endregion ..:: Variáveis ::..
 
