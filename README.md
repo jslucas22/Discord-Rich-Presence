@@ -38,9 +38,12 @@ public MeuConstrutor(foo)
 
 O ID da aplicação é um campo obrigatório, ele identifica o perfil do usuário que iremos
 alterar o status de atividade.
-![](RPC/Resources/Imagens/sistema.png)
 
-Após Clicado em "Definir Valores", já podemos ver que o status de atividade no discord foi alterado
+![](RPC/Resources/Imagens/sistema_novo.png)
+
+Após Clicado em "Definir Status de Atividade", já podemos ver que o valor referente ao 
+status de atividade também foi alterado
+
 ![](RPC/Resources/Imagens/discord.png)
 
 # Licença 📃
