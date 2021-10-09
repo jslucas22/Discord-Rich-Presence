@@ -63,6 +63,16 @@ namespace RPC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minus_22px {
+            get {
+                object obj = ResourceManager.GetObject("minus_22px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap multiply_22px {
             get {
                 object obj = ResourceManager.GetObject("multiply_22px", resourceCulture);

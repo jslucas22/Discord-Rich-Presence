@@ -34,7 +34,6 @@ namespace RPC
             this.lblIDApp = new System.Windows.Forms.Label();
             this.lblImagemGrande = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.picFechar = new System.Windows.Forms.PictureBox();
             this.lblNomePrograma = new System.Windows.Forms.Label();
             this.pnlImagemRaw = new RPC.Controles.CustomPanel();
             this.txtImagemRaw = new System.Windows.Forms.TextBox();
@@ -46,12 +45,15 @@ namespace RPC
             this.txtIdAplicacao = new System.Windows.Forms.TextBox();
             this.btnAlterarStatus = new RPC.Controles.CustomButton();
             this.btnInicializar = new RPC.Controles.CustomButton();
+            this.picMinimizar = new System.Windows.Forms.PictureBox();
+            this.picFechar = new System.Windows.Forms.PictureBox();
             this.pnlHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFechar)).BeginInit();
             this.pnlImagemRaw.SuspendLayout();
             this.pnlEstado.SuspendLayout();
             this.pnlCustomDetalhes.SuspendLayout();
             this.pnlIdAplicacao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFechar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEstado
@@ -93,6 +95,7 @@ namespace RPC
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(50)))), ((int)(((byte)(59)))));
+            this.pnlHeader.Controls.Add(this.picMinimizar);
             this.pnlHeader.Controls.Add(this.picFechar);
             this.pnlHeader.Controls.Add(this.lblNomePrograma);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -103,17 +106,6 @@ namespace RPC
             this.pnlHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseDown);
             this.pnlHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseMove);
             this.pnlHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlHeader_MouseUp);
-            // 
-            // picFechar
-            // 
-            this.picFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picFechar.Image = global::RPC.Properties.Resources.multiply_22px;
-            this.picFechar.Location = new System.Drawing.Point(446, 1);
-            this.picFechar.Name = "picFechar";
-            this.picFechar.Size = new System.Drawing.Size(22, 22);
-            this.picFechar.TabIndex = 2;
-            this.picFechar.TabStop = false;
-            this.picFechar.Click += new System.EventHandler(this.picFechar_Click);
             // 
             // lblNomePrograma
             // 
@@ -270,6 +262,28 @@ namespace RPC
             this.btnInicializar.UseVisualStyleBackColor = false;
             this.btnInicializar.Click += new System.EventHandler(this.btnInicializar_Click_1);
             // 
+            // picMinimizar
+            // 
+            this.picMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMinimizar.Image = global::RPC.Properties.Resources.minus_22px;
+            this.picMinimizar.Location = new System.Drawing.Point(418, 1);
+            this.picMinimizar.Name = "picMinimizar";
+            this.picMinimizar.Size = new System.Drawing.Size(22, 22);
+            this.picMinimizar.TabIndex = 3;
+            this.picMinimizar.TabStop = false;
+            this.picMinimizar.Click += new System.EventHandler(this.picMinimizar_Click);
+            // 
+            // picFechar
+            // 
+            this.picFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picFechar.Image = global::RPC.Properties.Resources.multiply_22px;
+            this.picFechar.Location = new System.Drawing.Point(446, 1);
+            this.picFechar.Name = "picFechar";
+            this.picFechar.Size = new System.Drawing.Size(22, 22);
+            this.picFechar.TabIndex = 2;
+            this.picFechar.TabStop = false;
+            this.picFechar.Click += new System.EventHandler(this.picFechar_Click);
+            // 
             // zMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,7 +311,6 @@ namespace RPC
             this.Load += new System.EventHandler(this.z_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFechar)).EndInit();
             this.pnlImagemRaw.ResumeLayout(false);
             this.pnlImagemRaw.PerformLayout();
             this.pnlEstado.ResumeLayout(false);
@@ -306,6 +319,8 @@ namespace RPC
             this.pnlCustomDetalhes.PerformLayout();
             this.pnlIdAplicacao.ResumeLayout(false);
             this.pnlIdAplicacao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,6 +345,7 @@ namespace RPC
         private Controles.CustomPanel pnlEstado;
         private Controles.CustomPanel pnlImagemRaw;
         private System.Windows.Forms.PictureBox picFechar;
+        private System.Windows.Forms.PictureBox picMinimizar;
     }
 }
 

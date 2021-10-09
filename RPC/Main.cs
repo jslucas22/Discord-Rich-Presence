@@ -133,7 +133,8 @@ namespace RPC
 
         private void pnlHeader_MouseUp(object sender, MouseEventArgs e) => _movimento = 0;
         private void picFechar_Click(object sender, EventArgs e) => Application.Exit();
+        private void picMinimizar_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 
-        #endregion ..:: Eventos ::..        
+        #endregion ..:: Eventos ::..                
     }
 }
